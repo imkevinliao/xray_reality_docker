@@ -44,6 +44,15 @@ docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 
 ${CONTAINER_NAME} 使用你指定的名字替换，如果你使用我上面的命令，那么应该是 xray_vision 或者 xray_grpc 
 
+## 4. 移除
+
+停止容器，移除容器，移除镜像
+```
+CONTAINER_NAME="xray_grpc" &&  docker stop ${CONTAINER_NAME} && docker rm ${CONTAINER_NAME} && docker rmi kevinstarry/xray:latest
+```
+```
+CONTAINER_NAME="xray_vision" &&  docker stop ${CONTAINER_NAME} && docker rm ${CONTAINER_NAME} && docker rmi kevinstarry/xray:latest
+```
 
 # 补充说明
 可配置环境变量展示与说明：
