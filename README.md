@@ -46,7 +46,7 @@ ${CONTAINER_NAME} 使用你指定的名字替换，如果你使用我上面的�
 
 ## 4. 移除
 
-停止容器，移除容器，移除镜像
+停止容器，移除容器，移除镜像  （悄悄地，我走了，不留下一丝痕迹，仿佛从未来过）
 ```
 CONTAINER_NAME="xray_grpc" &&  docker stop ${CONTAINER_NAME} && docker rm ${CONTAINER_NAME} && docker rmi kevinstarry/xray:latest
 ```
