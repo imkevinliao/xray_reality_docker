@@ -12,7 +12,6 @@ xray vision:
 USER_PORT=61111 && CONTAINER_NAME="xray_vision" && \
 docker run -d --name ${CONTAINER_NAME} --restart=always \
   -p ${USER_PORT}:443 \
-  -e DOMAIN="addons.mozilla.org" \
   -e ProtocolType="Vision" \
   -e HOST_PORT="${USER_PORT}" \
   kevinstarry/xray:latest && \
@@ -24,7 +23,6 @@ xray grpc:
 USER_PORT=62222 && CONTAINER_NAME="xray_grpc" && \
 docker run -d --name ${CONTAINER_NAME} --restart=always \
   -p ${USER_PORT}:443 \
-  -e DOMAIN="addons.mozilla.org" \
   -e ProtocolType="gRPC" \
   -e HOST_PORT="${USER_PORT}" \
   kevinstarry/xray:latest && \
