@@ -121,5 +121,17 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   kevinstarry/xray:latest && \
   sleep 1 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
+# 致谢
+排名不分先后：
 
+https://github.com/docker
+
+https://github.com/XTLS/Xray-core
+
+https://github.com/XTLS/Xray-examples
+
+https://github.com/wulabing/xray_docker
+
+# 寄语
+Reality 让人感觉仿佛是回到了 SSR 的那个时代，致敬 “逗比”。
 
