@@ -1,10 +1,10 @@
 # 快速上手
 
-1. 服务器部署 docker
+## 1. 服务器部署 docker
 
 ```curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh```
 
-2. 启动 xray
+## 2. 启动 xray
 下面两种协议，任取一个即可。
 
 xray vision:
@@ -31,7 +31,7 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
 
 新手提示：USER_PORT 是主机端口，需要服务器放开该端口（一般大厂都需要主动开放，小厂通常所有端口都是开放的），USER_PORT 可以自行修改即可
 
-3. 查看生成的链接
+## 3. 查看生成的链接
 链接在上面已经生成了，如果忘了可以使用：
 
 docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
