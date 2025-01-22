@@ -43,7 +43,7 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
 
 docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 
-${CONTAINER_NAME} 使用你指定的名字替换，如果你使用我上面的命令，那么应该是 xray_vision 或者 xray_grpc 
+${CONTAINER_NAME} 使用你指定的名字替换，如果你使用上面的命令，那么应该是 xray_vision 或者 xray_grpc 
 
 ## 4. 移除
 
