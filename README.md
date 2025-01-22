@@ -2,7 +2,9 @@
 
 ## 1. 服务器部署 docker
 
-```curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh```
+```
+curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+```
 
 ## 2. 启动 xray
 
