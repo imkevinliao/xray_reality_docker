@@ -151,6 +151,8 @@ curl --ipv6 ip.me
 docker buildx build amd64和arm64两个版本，基本可以覆盖所有linux，如果 xray reality 工具或者协议没有重大更新，那么本镜像也不必更新。
 
 工具就应该足够简单和易用，不要浪费时间在折腾工具上，宁可躺在草地上晒一下午太阳，也不要浪费一分钟去折腾服务器。这就是本镜像的初衷。
+
+docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray
 # 致谢
 排名不分先后：
 
