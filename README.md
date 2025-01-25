@@ -57,7 +57,8 @@ CONTAINER_NAME="xray_grpc" &&  docker stop ${CONTAINER_NAME} && docker rm ${CONT
 CONTAINER_NAME="xray_vision" &&  docker stop ${CONTAINER_NAME} && docker rm ${CONTAINER_NAME} && docker rmi kevinstarry/xray:latest
 ```
 
-# 补充说明
+# 说明
+## 配置参数
 可配置环境变量展示与说明：
 ```
 ENV UUID=""
@@ -103,11 +104,6 @@ ProtocolType：只接受两个值 Vision 和 gRPC （区分大小写），如果
 
 COMMENT：顾名思义，节点名称备注
 
-## 为什么要单独配置这些变量
-考虑到有些用户有多台服务器，部署完全一样的 vless 链接，如果某个服务器挂了，可以直接把 ip 替换就能继续使用
-
-是否安全？ 当然使用同一个配置肯定没有完全随机生成安全，但是通常情况下自己使用完全可以，自己妥善保管就好。
-
 ## 以Vison协议举例
 例如要配置 2333 作为服务器端口
 
@@ -136,6 +132,18 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   kevinstarry/xray:latest && \
   sleep 1 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
+
+## 为什么要单独配置这些变量
+考虑到有些用户有多台服务器，部署完全一样的 vless 链接，如果某个服务器挂了，可以直接把 ip 替换就能继续使用
+
+是否安全？ 当然使用同一个配置肯定没有完全随机生成安全，但是通常情况下自己使用完全可以，自己妥善保管就好。
+
+## 为什么要做这个镜像
+目前主流协议大部分都需要使用域名申请证书，虽然有各类脚本，但仍觉得繁琐，如果两行命令可以解决的事情，就不要浪费太多时间去研究。
+
+docker buildx build amd64和arm64两个版本，基本可以覆盖所有linux，如果 xray reality 工具或者协议没有重大更新，那么本镜像也不必更新。
+
+工具就应该足够简单和易用，不要浪费时间在折腾工具上，宁可躺在草地上晒一下午太阳，也不要浪费一分钟去折腾服务器。这就是本镜像的初衷。
 # 致谢
 排名不分先后：
 
