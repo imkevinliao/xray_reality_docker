@@ -18,7 +18,7 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   -e ProtocolType="Vision" \
   -e HOST_PORT="${USER_PORT}" \
   kevinstarry/xray:latest && \
-  sleep 1 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
+  sleep 3 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
 
 xray grpc:
@@ -29,7 +29,7 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   -e ProtocolType="gRPC" \
   -e HOST_PORT="${USER_PORT}" \
   kevinstarry/xray:latest && \
-  sleep 1 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
+  sleep 3 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
 
 补充：USER_PORT 是主机端口(建议自己设置一个端口)，注意需要服务器放开该端口（一般大厂都需要主动开放，小厂通常所有端口都是开放的）。
@@ -145,5 +145,5 @@ https://github.com/XTLS/Xray-examples
 https://github.com/wulabing/xray_docker
 
 # 寄语
-Reality 让人感觉仿佛是回到了 SSR 的那个时代，致敬 “逗比”。
+Reality 让人感觉仿佛是回到了 SSR 的那个时代，致敬 “逗比”。如果帮助到你，Star Star Star
 
