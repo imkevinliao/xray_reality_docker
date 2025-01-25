@@ -133,6 +133,13 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   sleep 1 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
 
+# 关于ipv6
+任意找一个ip的网址，使用curl命令获取一下即可：
+```
+curl --ipv6 ip.me
+```
+节点：把拿到的ipv6直接替换ipv4地址即可。（ipv6目前生态还不行，有些线路可能v6直，v4绕，通常差距也不会很大）
+
 ## 为什么要单独配置这些变量
 考虑到有些用户有多台服务器，部署完全一样的 vless 链接，如果某个服务器挂了，可以直接把 ip 替换就能继续使用
 
