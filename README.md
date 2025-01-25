@@ -69,6 +69,7 @@ ENV HOST=""
 # ENV ProtocolType= "Vision" Or "gRPC"
 ENV ProtocolType=""
 ENV HOST_PORT=""
+ENV COMMENT=""
 ```
  
 UUID 由 xray uuid 生成
@@ -99,6 +100,8 @@ HOST：这个是服务器的公网 ip 地址
 HOST_PORT:这个是主机端口，实际上随便什么端口都可以，只是需要将该参数传递给容器，不然链接生成时候端口不知道是哪一个
 
 ProtocolType：只接受两个值 Vision 和 gRPC （区分大小写），如果是其他值会默认选择 gRPC，所以可以理解为接受 Vision 和 其他值。
+
+COMMENT：顾名思义，节点名称备注
 
 ## 为什么要单独配置这些变量
 考虑到有些用户有多台服务器，部署完全一样的 vless 链接，如果某个服务器挂了，可以直接把 ip 替换就能继续使用
