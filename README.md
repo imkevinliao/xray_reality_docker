@@ -8,7 +8,7 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 
 ## 2. 启动 xray
 
-下面两种协议，任取一个复制后，直接执行命令即可。（当然你创建两个或者二十个也是可以的 >_< ）
+下面两种协议，任取一个复制后，直接执行命令即可。（当然你可以一起创建 >_< ）
 
 xray vision:
 ```
