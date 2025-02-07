@@ -1,13 +1,14 @@
 # 快速上手
+只需复制粘贴回车重复操作两次即可！（awesome）
 
-## 1. 服务器部署 docker
+## 1. 部署 docker
 
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
 
-## 2. 启动 xray
-
+## 2. 启动 xray 容器
+ 
 下面两种协议，任取一个复制后，直接执行命令即可。（当然你可以一起创建 >_< ）
 
 xray vision:
