@@ -154,9 +154,7 @@ docker buildx build amd64和arm64两个版本，基本可以覆盖所有linux，
 工具就应该足够简单和易用，不要浪费时间在折腾工具上，宁可躺在草地上晒一下午太阳，也不要浪费一分钟去折腾服务器。这就是本镜像的初衷。
 
 docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray
-# 致谢
-排名不分先后：
-
+# 致谢（排名不分先后）
 https://github.com/docker
 
 https://github.com/XTLS/Xray-core
@@ -166,5 +164,7 @@ https://github.com/XTLS/Xray-examples
 https://github.com/wulabing/xray_docker
 
 # 寄语
-Reality 让人感觉仿佛是回到了 SSR 的那个时代，致敬 “逗比”。如果帮助到你，Star Star Star
+Across the GFW, and it’s never been this effortless.
+
+if help you，Star Star Star！
 
