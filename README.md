@@ -11,6 +11,10 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
  
 下面两种协议，任取一个复制后，直接执行命令即可。（当然你可以一起创建 >_< ）
 
+reality vision 最稳 （速度差不多） 大部分客户端都支持
+
+reality grpc 连接更快（速度差不多） 部分客户端可能存在问题 
+
 xray vision:
 ```
 USER_PORT=61111 && CONTAINER_NAME="xray_vision" && \
@@ -34,12 +38,6 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
 ```
 
 补充：USER_PORT 是主机端口(建议自己设置一个端口)，注意需要服务器放开该端口（一般大厂都需要主动开放，小厂通常所有端口都是开放的）。
-
-系统端口（Well-known Ports）：0-1023。这些端口通常由系统或特定的服务使用，例如 HTTP（端口 80）、HTTPS（端口 443）、FTP（端口 21）等。
-
-注册端口（Registered Ports）：1024-49151。这些端口通常由应用程序和服务使用，它们可以被程序注册以确保它们的端口号不会与其他应用冲突。
-
-动态或私有端口（Dynamic or Private Ports）：49152-65535。这些端口通常由操作系统动态分配给客户端应用程序。
 
 ## 3. 查看生成的链接
 链接在上面已经生成了，如果忘了可以使用：
@@ -101,9 +99,9 @@ HOST：这个是服务器的公网 ipv4 地址 （当然你可以使用域名，
 
 HOST_PORT:这个是主机（宿主机）端口，实际上随便什么端口都可以，只是需要将该参数传递给容器，不然链接生成时候端口不知道是哪一个
 
-ProtocolType：只接受两个值 Vision 和 gRPC （区分大小写），如果是其他值会默认选择 gRPC，所以可以理解为接受 Vision 和 其他值。
+ProtocolType：只接受两个值 Vision 和 gRPC （区分大小写）。除非填写的是 Vision 不然默认 gRPC 。
 
-COMMENT：顾名思义，节点名称备注
+COMMENT：节点名称备注
 
 ## 以Vison协议举例
 例如要配置 2333 作为服务器端口
@@ -139,21 +137,23 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
 ```
 curl --ipv6 ip.me
 ```
-节点：把拿到的ipv6直接替换ipv4地址即可。（ipv6目前生态还不行，有些线路可能v6直，v4绕，通常差距也不会很大）
+节点：把拿到的ipv6直接替换ipv4地址即可。（小白勿用，避免奇怪的问题）
 
-## 为什么要单独配置这些变量
-考虑到有些用户有多台服务器，部署完全一样的 vless 链接，如果某个服务器挂了，可以直接把 ip 替换就能继续使用
+# 问题
+为什么要配置这些参数，直接随机生成不好吗？
 
-是否安全？ 当然使用同一个配置肯定没有完全随机生成安全，但是通常情况下自己使用完全可以，自己妥善保管就好。
+多台服务器配置同样的参数，可以确保如果某台服务器挂了，只需要替换 IP 就可以重新使用。
 
-## 为什么要做这个镜像
+这么做是否安全？ 
+
+使用同一个配置必然没有完全随机生成来的更安全，但仅自己使用是完全可以的，妥善保管就好。
+
+为什么要做这个镜像?
+
 目前主流协议大部分都需要使用域名申请证书，虽然有各类脚本，但仍觉得繁琐，如果两行命令可以解决的事情，就不要浪费太多时间去研究。
 
-docker buildx build amd64和arm64两个版本，基本可以覆盖所有linux，如果 xray reality 工具或者协议没有重大更新，那么本镜像也不必更新。
+工具就应该足够简单和易用，不要浪费时间在工具上，躺在草地上晒一下午太阳，不是更惬意吗。
 
-工具就应该足够简单和易用，不要浪费时间在折腾工具上，宁可躺在草地上晒一下午太阳，也不要浪费一分钟去折腾服务器。这就是本镜像的初衷。
-
-docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray
 # 致谢（排名不分先后）
 https://github.com/docker
 
@@ -166,5 +166,7 @@ https://github.com/wulabing/xray_docker
 # 寄语
 Across the GFW, and it’s never been this effortless.
 
-if help you，Star Star Star！
+If help you Star Star Star
+
+docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray
 
