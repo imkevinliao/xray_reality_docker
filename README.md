@@ -1,5 +1,44 @@
 # 快速上手
-只需复制粘贴回车重复操作两次即可！（awesome）
+只需复制粘贴回车即可！（awesome）
+
+# 新版本
+新版本是在原来的版本上改进的，主要改进和调整如下：
+
+1. 两个协议合并，共用一个端口 （删除了之前配置协议的参数）
+2. 增加 geodata 每日自动更新
+3. 路径优化 所有文件配置操作 都在 /app 路径下 （之前在根路径）
+4. 节点信息放置在：/app/info.txt (docker exec -it reality cat info.txt)
+
+环境变量定义
+
+ENV PORT=""        暴露的主机端口，生成链接需要使用
+ENV UUID=""        与先前一致
+ENV DOMAIN=""      与先前一致
+ENV PRIVATEKEY=""  与先前一致
+ENV PUBLICKEY=""   与先前一致
+ENV HOST=""        与先前一致
+ENV COMMENT=""     与先前一致
+
+如果不指定 PORT 默认使用 443，指定 PORT 则将 PORT 作为参数传递给容器（生成链接），当然你也可以选择手动修改链接 PORT
+
+```
+PORT=12345 && NAME="reality" && \
+docker run -d --name ${NAME} --restart=always \
+  -p $PORT:443 \
+  -e PORT="$PORT" \
+  kevinstarry/reality:latest && \
+  sleep 3 && docker exec -it ${NAME} cat info.txt
+```
+
+卸载：一键三连
+```
+docker stop reality && docker rm reality && docker rmi kevinstarry/reality
+```
+
+起飞 ~~~
+
+
+----------------------
 
 ## 1. 部署 docker
 
