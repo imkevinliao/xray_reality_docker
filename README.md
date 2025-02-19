@@ -7,9 +7,12 @@
 1. 两个协议合并，共用一个端口 （删除了之前配置协议的参数）
 2. 增加 geodata 每日自动更新
 3. 路径优化 所有文件配置操作 都在 /app 路径下 （之前在根路径）
-4. 节点信息放置在：/app/info.txt (docker exec -it reality cat info.txt)
+4. 节点信息放置在：/app/info.txt (查看节点信息 docker exec -it reality cat info.txt)
 
+```
 环境变量定义
+
+如果不指定 PORT 默认使用 443，指定 PORT 则将 PORT 作为参数传递给容器（生成链接），当然你也可以选择手动修改链接 PORT
 
 ENV PORT=""        暴露的主机端口，生成链接需要使用
 ENV UUID=""        与先前一致
@@ -18,9 +21,9 @@ ENV PRIVATEKEY=""  与先前一致
 ENV PUBLICKEY=""   与先前一致
 ENV HOST=""        与先前一致
 ENV COMMENT=""     与先前一致
+```
 
-如果不指定 PORT 默认使用 443，指定 PORT 则将 PORT 作为参数传递给容器（生成链接），当然你也可以选择手动修改链接 PORT
-
+自行修改 PORT 和 NAME 起飞
 ```
 PORT=12345 && NAME="reality" && \
 docker run -d --name ${NAME} --restart=always \
@@ -30,12 +33,17 @@ docker run -d --name ${NAME} --restart=always \
   sleep 3 && docker exec -it ${NAME} cat info.txt
 ```
 
+懒得修改 PORT 和 NAME 直接起飞：
+```
+docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
+```
+
 卸载：一键三连
 ```
 docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 ```
 
-起飞 ~~~
+
 
 
 ----------------------
