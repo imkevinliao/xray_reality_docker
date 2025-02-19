@@ -40,6 +40,9 @@ docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 
 ----------------------
 
+# 旧版本
+下面是旧版本说明
+
 ## 1. 部署 docker
 
 ```
