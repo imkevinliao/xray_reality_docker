@@ -23,7 +23,7 @@ ENV HOST=""        与先前一致
 ENV COMMENT=""     与先前一致
 ```
 
-自行修改 PORT 和 NAME 起飞
+自行修改 PORT 和 NAME 起飞:
 ```
 PORT=12345 && NAME="reality" && \
 docker run -d --name ${NAME} --restart=always \
