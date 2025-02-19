@@ -29,6 +29,7 @@ PORT=12345 && NAME="reality" && \
 docker run -d --name ${NAME} --restart=always \
   -p $PORT:443 \
   -e PORT="$PORT" \
+  -e DOMAIN="" \
   kevinstarry/reality:latest && \
   sleep 3 && docker exec -it ${NAME} cat info.txt
 ```
