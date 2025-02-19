@@ -44,9 +44,6 @@ docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinst
 docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 ```
 
-
-
-
 ----------------------
 
 # 旧版本
