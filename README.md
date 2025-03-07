@@ -2,6 +2,12 @@
 只需复制粘贴回车即可！（awesome）
 
 # 新版本
+部署 docker
+
+```
+curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+```
+
 自行修改 PORT 和 NAME 起飞:
 ```
 PORT=12345 && NAME="reality" && \
