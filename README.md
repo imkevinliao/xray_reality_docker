@@ -2,7 +2,7 @@
 只需复制粘贴回车即可！（awesome）
 
 # 新版本
-部署 docker
+部署 docker (已部署则忽略）
 
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
