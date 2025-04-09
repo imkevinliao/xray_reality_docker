@@ -31,7 +31,7 @@ docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 
 新版本是在原来的版本上改进的，主要改进和调整如下：
 
-1. 两个协议合并，共用一个端口 （删除了之前配置协议的参数，因为没必要了直接都配置）
+1. 两个协议合并，共用一个端口
 2. 增加 geodata 每日自动更新
 3. 路径优化 所有文件配置操作 都在 /app 路径下 更干净也更清晰
 4. 节点信息放置在：/app/info.txt (查看节点信息 docker exec -it reality cat info.txt)
