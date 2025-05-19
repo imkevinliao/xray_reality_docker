@@ -24,6 +24,8 @@ docker run -d --name ${NAME} --restart=always \
 docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
 ```
 
+查看节点信息 ```docker exec -it reality cat info.txt```
+
 卸载：一键三连
 ```
 docker stop reality && docker rm reality && docker rmi kevinstarry/reality
@@ -34,7 +36,7 @@ docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 1. 两个协议合并，共用一个端口
 2. 增加 geodata 每日自动更新
 3. 路径优化 所有文件配置操作 都在 /app 路径下 更干净也更清晰
-4. 节点信息放置在：/app/info.txt (查看节点信息 docker exec -it reality cat info.txt)
+4. 节点信息放置在：/app/info.txt 
 
 ```
 环境变量定义
@@ -92,8 +94,6 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
 ```
 
 补充：USER_PORT 是主机端口(建议自己设置一个端口)，注意需要服务器放开该端口（一般大厂都需要主动开放，小厂通常所有端口都是开放的）。
-
-查看节点信息 docker exec -it reality cat /xray_info.txt
 ## 3. 查看生成的链接
 链接在上面已经生成了，如果忘了可以使用：
 
