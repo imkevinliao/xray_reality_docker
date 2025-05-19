@@ -93,6 +93,7 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
 
 补充：USER_PORT 是主机端口(建议自己设置一个端口)，注意需要服务器放开该端口（一般大厂都需要主动开放，小厂通常所有端口都是开放的）。
 
+查看节点信息 docker exec -it reality cat /xray_info.txt
 ## 3. 查看生成的链接
 链接在上面已经生成了，如果忘了可以使用：
 
