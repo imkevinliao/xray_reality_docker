@@ -25,7 +25,10 @@ docker run -d --name ${NAME} --restart=always \
 docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
 ```
 
-查看节点信息 ```docker exec -it reality cat info.txt```
+查看节点信息 
+```
+docker exec -it reality cat info.txt
+```
 
 卸载：一键三连
 ```
