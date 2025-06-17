@@ -1,6 +1,7 @@
 # 快速上手
 只需复制粘贴回车即可！（awesome）
 
+可以装一个hysteria备用：https://github.com/imkevinliao/hysteria_docker
 # 新版本
 部署 docker (已部署则忽略）
 
