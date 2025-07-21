@@ -191,6 +191,10 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   sleep 1 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
 
+```
+apt update -y && apt upgrade -y 
+```
+
 # 关于ipv6
 任意找一个ip的网址，使用curl命令获取一下即可：
 ```
