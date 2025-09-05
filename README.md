@@ -9,23 +9,23 @@
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
 
-自行修改 PORT 和 NAME 起飞:
-```
-PORT=12345 && NAME="reality" && \
-docker run -d --name ${NAME} --restart=always \
-  -p $PORT:443 \
-  -e PORT="$PORT" \
-  -e DOMAIN="" \
-  kevinstarry/reality:latest && \
-  sleep 3 && docker exec -it ${NAME} cat info.txt
-```
-
-懒得修改 PORT 和 NAME 直接起飞：
+懒人直接一键科学上网就好了（敲完命令等待vless链接生成即可）：
 ```
 docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
 ```
 
-查看节点信息 
+修改 PORT 和 伪装域名 (伪装域名可选，不填会从指定的域名列表中随机挑选一个):例如 port 10010 伪装域名 www.apple.com
+```
+PORT=10010 && NAME="reality" && \
+docker run -d --name ${NAME} --restart=always \
+  -p $PORT:443 \
+  -e PORT="$PORT" \
+  -e DOMAIN="www.apple.com" \
+  kevinstarry/reality:latest && \
+  sleep 3 && docker exec -it ${NAME} cat info.txt
+```
+
+直接查看节点信息 
 ```
 docker exec -it reality cat info.txt
 ```
@@ -188,7 +188,7 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   -e ProtocolType="Vision" \
   -e HOST_PORT="${USER_PORT}" \
   kevinstarry/xray:latest && \
-  sleep 1 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
+  sleep 3 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
 
 ```
