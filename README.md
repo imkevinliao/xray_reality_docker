@@ -3,18 +3,35 @@
 
 可以装一个hysteria备用：https://github.com/imkevinliao/hysteria_docker
 # 新版本
-部署 docker (已部署则忽略）
+懒人只需要两步骤：
+
+1. 部署 docker
 
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
 
-懒人直接一键科学上网就好了（敲完命令等待vless链接生成即可）：
+2. 一键科学上网（敲完命令等待vless链接生成即可）：
 ```
 docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
 ```
 
-修改 PORT 和 伪装域名 (伪装域名可选，不填会从指定的域名列表中随机挑选一个):例如 port 10010 伪装域名 www.apple.com
+懒人到这里就部署完了，剩下的是查看下节点信息和卸载，docker的好处就是完全不破坏环境，干干净净清除。
+
+查看节点信息 
+```
+docker exec -it reality cat info.txt
+```
+
+卸载：一键三连
+```
+docker stop reality && docker rm reality && docker rmi kevinstarry/reality
+```
+
+懒人到这里就结束了，下面的都是废话。
+
+
+自定义参数：修改 PORT 和 伪装域名 (伪装域名可选，不填会从指定的域名列表中随机挑选一个):例如 port 10010 伪装域名 www.apple.com
 ```
 PORT=10010 && NAME="reality" && \
 docker run -d --name ${NAME} --restart=always \
@@ -25,15 +42,7 @@ docker run -d --name ${NAME} --restart=always \
   sleep 3 && docker exec -it ${NAME} cat info.txt
 ```
 
-直接查看节点信息 
-```
-docker exec -it reality cat info.txt
-```
 
-卸载：一键三连
-```
-docker stop reality && docker rm reality && docker rmi kevinstarry/reality
-```
 
 新版本是在原来的版本上改进的，主要改进和调整如下：
 
