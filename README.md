@@ -5,8 +5,7 @@
 # 新版本
 懒人只需要两步骤：
 
-1. 部署 docker
-
+1. 部署 docker （敲完命令然后去喝杯茶）
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
