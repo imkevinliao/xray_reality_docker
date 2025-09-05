@@ -5,17 +5,17 @@
 # 新版本
 懒人只需要两步骤：
 
-1. 部署 docker （敲完命令然后去喝杯茶）
+1. 部署 docker （敲完命令然后去喝杯茶 等待docker部署）
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
 
-2. 一键科学上网（敲完命令等待vless链接生成即可）：
+2. 一键科学上网（敲完命令然后去喝杯茶 等待vless链接生成）：
 ```
 docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
 ```
 
-懒人到这里就部署完了，剩下的是查看下节点信息和卸载，docker的好处就是完全不破坏环境，干干净净清除。
+懒人到这里就部署完了，下面的两行命令，可以不看
 
 查看节点信息 
 ```
