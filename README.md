@@ -1,9 +1,7 @@
-# 快速上手
-只需复制粘贴回车即可！（awesome）
-
-可以装一个hysteria备用：https://github.com/imkevinliao/hysteria_docker
+# 科学上网
+hysteria备用：https://github.com/imkevinliao/hysteria_docker
 # 新版本
-懒人只需要两步骤：
+懒人只需要两步骤（复制粘贴回车重复两次）：
 
 1. 部署 docker （敲完命令然后去喝杯茶 等待docker部署）
 ```
