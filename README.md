@@ -13,22 +13,24 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
 ```
 
-懒人到这里就部署完了，下面的两行命令，可以不看
+懒人到这里就部署完了，下面的两行命令可以瞄一下
 
 查看节点信息 
 ```
 docker exec -it reality cat info.txt
 ```
 
-卸载：一键三连
+卸载：一键三连（彻底移除，干干净净）
 ```
 docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 ```
 
-懒人到这里就结束了，下面的都是废话。
+懒人到这里就结束了，后面的是给想了解更清楚地用户阅读的
 
 
-自定义参数：修改 PORT 和 伪装域名 (伪装域名可选，不填会从指定的域名列表中随机挑选一个):例如 port 10010 伪装域名 www.apple.com
+自定义参数：修改 PORT 和 伪装域名 (伪装域名可选，不填会从指定的域名列表中随机挑选一个)
+
+例如 port 10010 伪装域名 www.apple.com
 ```
 PORT=10010 && NAME="reality" && \
 docker run -d --name ${NAME} --restart=always \
