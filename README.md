@@ -64,18 +64,12 @@ ENV HOST=""        与先前一致
 ENV COMMENT=""     与先前一致
 ```
 
-----------------------
+--------------------------------
 
 # 旧版本
-下面是旧版本说明
+只是留个纪念，没必要存在了，新版本完全是对旧版本的全面升级与改进
 
-## 1. 部署 docker
-
-```
-curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
-```
-
-## 2. 启动 xray 容器
+## 1. 启动 xray 容器
  
 下面两种协议，任取一个复制后，直接执行命令即可。（当然你可以一起创建 >_< ）
 
@@ -106,14 +100,14 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
 ```
 
 补充：USER_PORT 是主机端口(建议自己设置一个端口)，注意需要服务器放开该端口（一般大厂都需要主动开放，小厂通常所有端口都是开放的）。
-## 3. 查看生成的链接
+## 2. 查看生成的链接
 链接在上面已经生成了，如果忘了可以使用：
 
 docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 
 ${CONTAINER_NAME} 使用你指定的名字替换，如果你使用上面的命令，那么应该是 xray_vision 或者 xray_grpc 
 
-## 4. 移除
+## 3. 移除
 
 停止容器，移除容器，移除镜像  （悄悄地，我走了，不留下一丝痕迹，仿佛从未来过）
 ```
@@ -123,8 +117,7 @@ CONTAINER_NAME="xray_grpc" &&  docker stop ${CONTAINER_NAME} && docker rm ${CONT
 CONTAINER_NAME="xray_vision" &&  docker stop ${CONTAINER_NAME} && docker rm ${CONTAINER_NAME} && docker rmi kevinstarry/xray:latest
 ```
 
-# 说明
-## 配置参数
+## 配置参数说明（新版本可以参看）
 可配置环境变量展示与说明：
 ```
 ENV UUID=""
@@ -199,17 +192,11 @@ docker run -d --name ${CONTAINER_NAME} --restart=always \
   sleep 3 && docker exec -it ${CONTAINER_NAME} cat /xray_info.txt
 ```
 
-```
-apt update -y && apt upgrade -y 
-```
-
 # 关于ipv6
-任意找一个ip的网址，使用curl命令获取一下即可：
+任意找一个ip的网址，使用curl命令获取一下即可：节点信息里把拿到的ipv6直接替换ipv4地址即可。（小白勿用勿用勿用，避免各种奇怪的问题）
 ```
 curl --ipv6 ip.me
 ```
-节点：把拿到的ipv6直接替换ipv4地址即可。（小白勿用，避免奇怪的问题）
-
 # 问题
 为什么要配置这些参数，直接随机生成不好吗？
 
@@ -225,7 +212,9 @@ curl --ipv6 ip.me
 
 工具就应该足够简单和易用，不要浪费时间在工具上，躺在草地上晒一下午太阳，不是更惬意吗。
 
-# 致谢（排名不分先后）
+还有一个重要的原因，脚本非常容易污染服务器，这点我非常非常非常不喜欢。
+
+# 致谢（排名不分先后） && 寄语
 https://github.com/docker
 
 https://github.com/XTLS/Xray-core
@@ -234,12 +223,11 @@ https://github.com/XTLS/Xray-examples
 
 https://github.com/wulabing/xray_docker
 
-# 寄语
 Across the GFW, and it’s never been this effortless.
 
 If help you Star Star Star
 
-docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray
+docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray  （old version)
 
-docker hub: https://hub.docker.com/repository/docker/kevinstarry/reality
+docker hub: https://hub.docker.com/repository/docker/kevinstarry/reality  (new version)
 
