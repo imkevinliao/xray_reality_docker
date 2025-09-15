@@ -29,11 +29,11 @@ docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 
 ----------------------------------------
 
-自定义参数：修改 PORT 和 伪装域名 (伪装域名可选，不填会从指定的域名列表中随机挑选一个)
+自定义参数：修改服务器暴露的 PORT 和 伪装域名 (伪装域名可选，不填会从指定的域名列表中随机挑选一个)
 
-例如 port 10010 伪装域名 www.apple.com
+例如 PORT 10086 伪装域名 www.apple.com
 ```
-PORT=10010 && NAME="reality" && \
+PORT=10086 && NAME="reality" && \
 docker run -d --name ${NAME} --restart=always \
   -p $PORT:443 \
   -e PORT="$PORT" \
