@@ -213,7 +213,7 @@ curl --ipv6 ip.me
 
 还有一个重要的原因，脚本非常容易污染服务器，这点我非常非常非常不喜欢。
 
-# 致谢（排名不分先后） && 寄语
+# 致谢 && 寄语
 https://github.com/docker
 
 https://github.com/XTLS/Xray-core
@@ -222,11 +222,8 @@ https://github.com/XTLS/Xray-examples
 
 https://github.com/wulabing/xray_docker
 
-Across the GFW, and it’s never been this effortless.
-
-If help you Star Star Star
-
-docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray  （old version)
+~~docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray  （old version)~~
 
 docker hub: https://hub.docker.com/repository/docker/kevinstarry/reality  (new version)
 
+My warmest wishes：Across the GFW, and it’s never been this effortless. If help you Star Star Star
