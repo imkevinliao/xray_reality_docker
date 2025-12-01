@@ -63,7 +63,7 @@ DOMAIN 是伪装域名：不指定则会从下面的域名中随机生成一个
     ]
 ```
 
-HOST：服务器的公网 ipv4 地址, 无需手动指定，会使用 curl 从下面的列表逐个获取直至成功
+HOST：服务器的公网 ipv4 地址, 无需手动指定，容器启动时候会使用 curl 从下面的列表逐个获取直至成功
 ```
 ["api.ipify.org", "ifconfig.me", "ip.me", "ipinfo.io/ip","ip.sb"]
 ```
