@@ -1,5 +1,13 @@
 # 科学上网
-hysteria备用：https://github.com/imkevinliao/hysteria_docker
+hysteria (UDP协议)：https://github.com/imkevinliao/hysteria_docker
+
+anytls（TCP协议)：
+```shell
+PORT=1205 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
+```
+```
+docker stop anytls && docker rm anytls && docker rmi kevinstarry/anytls
+```
 # 快速部署
 懒人只需要两步骤（复制粘贴回车重复两次）：
 
