@@ -1,7 +1,7 @@
 # 科学上网
 hysteria (UDP协议)：https://github.com/imkevinliao/hysteria_docker
 
-anytls（TCP协议)：
+anytls（TCP协议)：（最近发现有这么个协议就顺便弄了，懒得单开说明了）
 ```shell
 PORT=1205 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
 ```
