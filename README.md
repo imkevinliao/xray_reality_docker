@@ -1,5 +1,6 @@
 # 科学上网
 hysteria (UDP协议)：https://github.com/imkevinliao/hysteria_docker
+
 # 快速部署
 1. 部署 docker （敲完命令然后去喝杯茶 等待docker部署）
 ```
@@ -7,15 +8,13 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
 2. 一键科学上网（敲完命令然后去喝杯茶 等待vless链接生成）：
 ```
-docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
+docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality && sleep 3 && docker exec -it reality cat info.txt
 ```
 3. 卸载：一键三连
 ```
 docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 ```
-
 # 参数说明
-
 示范用例（自定义参数PORT和DOMAIN）：例如 PORT 10086 伪装域名 www.apple.com
 ```
 PORT=10086 && NAME="reality" && \
@@ -65,16 +64,8 @@ anytls卸载：
 docker stop anytls && docker rm anytls && docker rmi kevinstarry/anytls
 ```
 # 致谢 && 寄语
-https://github.com/docker
-
-https://github.com/XTLS/Xray-core
-
-https://github.com/XTLS/Xray-examples
-
 https://github.com/wulabing/xray_docker
 
-~~docker hub: https://hub.docker.com/repository/docker/kevinstarry/xray  （old version)~~
-
-docker hub: https://hub.docker.com/repository/docker/kevinstarry/reality  (new version)
+docker hub: https://hub.docker.com/repository/docker/kevinstarry/reality
 
 My warmest wishes：Across the GFW, and it’s never been this effortless. If help you Star Star Star
