@@ -9,31 +9,18 @@ PORT=1205 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name
 docker stop anytls && docker rm anytls && docker rmi kevinstarry/anytls
 ```
 # 快速部署
-懒人只需要两步骤（复制粘贴回车重复两次）：
-
 1. 部署 docker （敲完命令然后去喝杯茶 等待docker部署）
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
-
 2. 一键科学上网（敲完命令然后去喝杯茶 等待vless链接生成）：
 ```
 docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat info.txt
 ```
-
-懒人到这里就部署完了，下面的两行命令补充
-
-查看节点信息 
-```
-docker exec -it reality cat info.txt
-```
-
-卸载：一键三连（彻底移除，干干净净）
+3. 卸载：一键三连
 ```
 docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 ```
-
-懒人到这里就结束
 
 # 参数说明
 
@@ -56,7 +43,6 @@ ENV DOMAIN=""      回落（伪装）域名
 ENV PRIVATEKEY=""  xray x25519 生成
 ENV PUBLICKEY=""   xray x25519 生成
 ENV HOST=""        服务器的公网 ipv4 地址
-ENV COMMENT=""     节点名称备注
 ```
 
 DOMAIN 是伪装域名：不指定则会从下面的域名中随机生成一个
@@ -74,17 +60,6 @@ DOMAIN 是伪装域名：不指定则会从下面的域名中随机生成一个
 HOST：服务器的公网 ipv4 地址, 无需手动指定，容器启动时候会使用 curl 从下面的列表逐个获取直至成功
 ```
 ["api.ipify.org", "ifconfig.me", "ip.me", "ipinfo.io/ip","ip.sb"]
-```
-
-补充：
-1. 所有文件配置操作 都在 /app 路径下 更干净也更清晰
-2. geodata 每日自动更新
-3. 节点信息保存在容器内部：/app/info.txt
-
-# 关于ipv6
-任意找一个ip的网址，使用curl命令获取一下即可：节点信息里把拿到的ipv6直接替换ipv4地址即可。（小白勿用勿用勿用，避免各种奇怪的问题）
-```
-curl --ipv6 ip.me
 ```
 
 # 致谢 && 寄语
