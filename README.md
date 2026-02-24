@@ -1,13 +1,5 @@
 # 科学上网
 hysteria (UDP协议)：https://github.com/imkevinliao/hysteria_docker
-
-anytls（TCP协议)：（最近发现有这么个协议就顺便弄了，懒得单开说明了）
-```shell
-PORT=1205 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
-```
-```
-docker stop anytls && docker rm anytls && docker rmi kevinstarry/anytls
-```
 # 快速部署
 1. 部署 docker （敲完命令然后去喝杯茶 等待docker部署）
 ```
@@ -61,7 +53,17 @@ HOST：服务器的公网 ipv4 地址, 无需手动指定，容器启动时候�
 ```
 ["api.ipify.org", "ifconfig.me", "ip.me", "ipinfo.io/ip","ip.sb"]
 ```
+# anytls补充
+新协议，闲得无聊手搓了一下，个人感受是不如hysteria快，不如reality稳，介于两者中间，食之无味弃之可惜。
 
+anytls部署：
+```
+PORT=1205 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
+```
+anytls卸载：
+```
+docker stop anytls && docker rm anytls && docker rmi kevinstarry/anytls
+```
 # 致谢 && 寄语
 https://github.com/docker
 
