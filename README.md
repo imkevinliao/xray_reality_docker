@@ -63,9 +63,11 @@ anytls卸载：
 ```
 docker stop anytls && docker rm anytls && docker rmi kevinstarry/anytls
 ```
-# 致谢 && 寄语
-https://github.com/wulabing/xray_docker
-
+# 寄语
 docker hub: https://hub.docker.com/repository/docker/kevinstarry/reality
+
+v1.0 是旧版本，xray内核较老
+
+v1.1 主要是增加了二维码，xray 版本 v26.2.6
 
 My warmest wishes：Across the GFW, and it’s never been this effortless. If help you Star Star Star
