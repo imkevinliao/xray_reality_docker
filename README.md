@@ -1,4 +1,4 @@
-# 科学上网/跨越长城
+# INTRO
 如果服务器没有安装docker，请先执行Docker官方安装脚本：
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
@@ -87,5 +87,5 @@ cert: /app/server.pem
 key: /app/server.key
 
 密码证书自动随机生成
-# 寄语
+# END
 My warmest wishes：Across the GFW, and it’s never been this effortless. If help you Star Star Star
