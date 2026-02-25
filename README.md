@@ -1,3 +1,7 @@
+# How to Use
+1. 安装 Docker （复制命令，回车）
+2. 启动容器 Reality/Hysteria2/AnyTLS 任意一个 （复制命令，回车）
+3. 容器正常启动后终端会显示链接和二维码 （手机扫码连接，电脑复制链接导入，开始上网）
 # Protocol
 1. Xray REALITY （Great Design）
 2. Hysteria2    （QUIC/UDP Break Limit）
