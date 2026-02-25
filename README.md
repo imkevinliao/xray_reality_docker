@@ -1,5 +1,5 @@
 # 科学上网/跨越长城
-如果服务器没有安装docker，请先执行官方docker安装脚本：
+如果服务器没有安装docker，请先执行Docker官方安装脚本：
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
