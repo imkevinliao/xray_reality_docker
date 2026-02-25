@@ -86,7 +86,6 @@ cert: /app/server.pem
 
 key: /app/server.key
 
-密码证书都是随机自动生成的，V3.0版本增加了二维码，方便直接扫码导入，linux镜像从alpine:latest换成了debian:bookworm-slim
-
+密码证书自动随机生成
 # 寄语
 My warmest wishes：Across the GFW, and it’s never been this effortless. If help you Star Star Star
