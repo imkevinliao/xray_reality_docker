@@ -3,7 +3,7 @@
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
-1. Reality （Xray 伟大的设计）
+1. Reality （Xray 伟大的设计 当前主流）
 2. Hysteria2 （UDP 突破极限）
 3. AnyTLS （冉冉升起的新星）
 # Reality
