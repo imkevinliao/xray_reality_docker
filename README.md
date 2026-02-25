@@ -1,39 +1,40 @@
-# INTRO
+# Protocol
+1. Xray REALITY （Great Design）
+2. Hysteria2    （QUIC/UDP Break Limit）
+3. AnyTLS       （New Start）
+# Docker
 Install Docker First!
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
-1. Xray REALITY （伟大的设计 当前主流协议）
-2. Hysteria2    （QUIC/UDP 突破极限）
-3. AnyTLS       （冉冉升起的新星）
 # Reality
-部署：
+Deploy：
 ```
 PORT=12345 && docker run -d --restart=always -p $PORT:443 -e PORT="$PORT" --name reality kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat /app/info.txt
 ```
-移除：
+Remove：
 ```
 docker stop reality && docker rm reality && docker rmi kevinstarry/reality
 ```
 # Hysteria2
-部署：
+Deploy：
 ```
 PORT=12346 && docker run -d --restart=always -p $PORT:443/udp -e PORT="$PORT" --name hysteria kevinstarry/hysteria:latest && sleep 3 && docker exec -it hysteria cat /app/info.txt
 ```
-移除：
+Remove：
 ```
 docker stop hysteria && docker rm hysteria  && docker rmi kevinstarry/hysteria:latest
 ```
 # AnyTLS
-部署：
+Deploy：
 ```
 PORT=12347 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
 ```
-移除：
+Remove：
 ```
 docker stop anytls && docker rm anytls && docker rmi kevinstarry/anytls
 ```
-# Reality 说明
+# Reality intro
 示范用例（自定义参数PORT和DOMAIN）：例如 PORT 10086 伪装域名 www.apple.com
 ```
 PORT=10086 && NAME="reality" && \
@@ -75,7 +76,7 @@ HOST：服务器的公网 ipv4 地址, 无需手动指定，容器启动时候�
 reality docker hub: https://hub.docker.com/repository/docker/kevinstarry/reality
 
 v1.0 是旧版本, xray 版本较老，用没问题都是reality协议；v1.1 主要是增加了二维码，方便导入，xray 版本 v26.2.6
-# Hysteria2 说明
+# Hysteria2 intro
 hysteria version：v2.6.5
 
 cert: /app/server.pem
@@ -85,10 +86,3 @@ key: /app/server.key
 自签证书设置的 36500 天（没有人真的会用一百年吧）
 # END
 My warmest wishes：Across the GFW, and it’s never been this effortless. If help you Star Star Star
-
-# AUTHOR
-你羡慕谁/就应该去成为TA/而不是停留在羡慕
-
-人生太短/每段关系的结局太难把握/试着活在关系里/永远不要骗自己/如果你要的是结局/就不要说不在乎结果/过程本身就很好/如果你在意的是过程/那就不要说过程虽然很糟/但结果至少是好的
-
-我的意思是/去体验生命/去感知生活/去活出自己
