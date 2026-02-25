@@ -6,7 +6,7 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 1. Reality （Xray 伟大的设计）
 2. Hysteria2 （UDP 突破极限）
 3. AnyTLS （冉冉升起的新星）
-# Reality 部署
+# Reality
 部署：
 ```
 PORT=12345 && docker run -d --restart=always -p $PORT:443 -e PORT="$PORT" --name reality kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat /app/info.txt
