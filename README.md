@@ -1,11 +1,11 @@
 # INTRO
-如果服务器没有安装docker，请先执行Docker官方安装脚本：
+Install Docker First!
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
-1. REALITY （Xray 伟大的设计 当前主流）
-2. Hysteria2 （UDP 突破极限）
-3. AnyTLS （冉冉升起的新星）
+1. Xray REALITY （伟大的设计 当前主流协议）
+2. Hysteria2    （QUIC/UDP 突破极限）
+3. AnyTLS       （冉冉升起的新星）
 # Reality
 部署：
 ```
