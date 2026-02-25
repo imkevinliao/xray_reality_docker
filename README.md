@@ -78,14 +78,17 @@ v1.0 是旧版本, xray 版本较老，用没问题都是reality协议；v1.1 �
 # Hysteria2 说明
 hysteria version：v2.6.5
 
-查看链接：docker exec -it hysteria cat /app/info.txt
-
-自签证书设置的 36500 天（没有人真的会用一百年吧）
-
 cert: /app/server.pem
 
 key: /app/server.key
 
-密码证书自动随机生成
+自签证书设置的 36500 天（没有人真的会用一百年吧）
 # END
 My warmest wishes：Across the GFW, and it’s never been this effortless. If help you Star Star Star
+
+# AUTHOR
+你羡慕谁/就应该去成为TA/而不是停留在羡慕
+
+人生太短/每段关系的结局太难把握/试着活在关系里/永远不要骗自己/如果你要的是结局/就不要说不在乎结果/过程本身就很好/如果你在意的是过程/那就不要说过程虽然很糟/但结果至少是好的
+
+我的意思是/去体验生命/去感知生活/去活出自己
