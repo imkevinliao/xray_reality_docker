@@ -9,7 +9,7 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 # Reality 部署
 部署：
 ```
-docker run -d --name reality --restart=always -p 12345:443 -e PORT=12345 kevinstarry/reality && sleep 3 && docker exec -it reality cat info.txt
+PORT=12345 && docker run -d --restart=always -p $PORT:443 -e PORT="$PORT" --name reality kevinstarry/reality:latest && sleep 3 && docker exec -it reality cat /app/info.txt
 ```
 移除：
 ```
@@ -27,7 +27,7 @@ docker stop hysteria && docker rm hysteria  && docker rmi kevinstarry/hysteria:l
 # AnyTLS
 部署：
 ```
-PORT=1205 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
+PORT=12347 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
 ```
 移除：
 ```
