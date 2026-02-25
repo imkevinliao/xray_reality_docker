@@ -52,8 +52,9 @@ HOST：服务器的公网 ipv4 地址, 无需手动指定，容器启动时候�
 ```
 ["api.ipify.org", "ifconfig.me", "ip.me", "ipinfo.io/ip","ip.sb"]
 ```
-# anytls补充
-新协议，闲得无聊手搓了一下，个人感受是不如hysteria快，不如reality稳，介于两者中间，食之无味弃之可惜。
+# anytls
+
+新协议，闲得无聊手搓了一下，个人感受是速度不如hysteria，稳定性不如reality，介于两者中间，食之无味弃之可惜。
 
 anytls部署：
 ```
