@@ -1,10 +1,10 @@
 # 科学上网
-Linux服务器安装Docker：
+如果服务器没有安装docker，请先执行官方docker安装脚本：
 ```
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 ```
 1. Reality （Xray 伟大的设计）
-2. Hysteria2 （UDP突破极限）
+2. Hysteria2 （UDP 突破极限）
 3. AnyTLS （冉冉升起的新星）
 # Reality 部署
 部署：
