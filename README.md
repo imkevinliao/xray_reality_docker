@@ -32,7 +32,7 @@ docker stop hysteria && docker rm hysteria  && docker rmi kevinstarry/hysteria:l
 # AnyTLS
 Deploy：
 ```
-PORT=12347 && docker run -d --restart=always -p $PORT:8433 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
+PORT=12347 && docker run -d --restart=always -p $PORT:8443 -e PORT="$PORT" --name anytls kevinstarry/anytls:latest  && sleep 3 && docker exec -it anytls cat /app/info.txt
 ```
 Remove：
 ```
